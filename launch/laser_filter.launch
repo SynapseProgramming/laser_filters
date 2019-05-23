@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+<node pkg="laser_filters" type="scan_to_scan_filter_chain" output="screen" name="laser_filter">
+  <!--Specify the name of the unfiltered laserscan topic(in this case its just scan_unfiltered)-->
+      <remap from="scan" to="scan_unfiltered" />
+
+  <!--Specify the name of the filtered laserscan topic(in this case its laser_scan)-->
+      <remap from="scan_filtered" to="laser_scan"/>
+      <rosparam command="load" file="$(find laser_filters)/param/laser_filter_config.yaml" />
+</node>
+</launch>
+
+
+
+
+
+
+
+
+

@@ -4,7 +4,10 @@ scan_filter_chain:
   params:
     min_angle: 10
     max_angle: 170
-    neighbors: 20
+    neighbors: 5
     window: 1
 
-
+- name: footprint_filter
+  type: LaserScanFootprintFilter
+  params:
+    inscribed_radius: 0.25
